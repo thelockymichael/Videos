@@ -3,6 +3,7 @@ import SearchBar from './SearchBar';
 import youtube from '../APIs/youtube';
 import VideoList from './VideoList';
 import VideoDetail from './VideoDetail';
+
 class App extends React.Component {
     state = { videos: [], selectedVideo: null };
 
@@ -11,7 +12,7 @@ class App extends React.Component {
     }
 
     onTermSubmit = async term => {
-        const response = await youtube.get('/search', {
+        const response = await youtube.get('/search', { 
             params: {
                 q: term
             }
